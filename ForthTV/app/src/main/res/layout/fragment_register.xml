@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_dark_blue"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <com.forthtv.util.view.TextFieldWithMessage
+        android:id="@+id/fragment_register_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"/>
+
+    <com.forthtv.util.view.TextFieldWithMessage
+        android:id="@+id/fragment_register_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"/>
+
+    <com.forthtv.util.view.TextFieldWithMessage
+        android:id="@+id/fragment_register_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"/>
+
+    <com.forthtv.util.view.TextViewWithMessage
+        android:id="@+id/fragment_register_date_of_birth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"/>
+
+    <Button
+        android:id="@+id/fragment_register_signup"
+        style="@style/StyleTextWhite14SP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/shape_app_button"
+        android:text="REGISTER" />
+
+    <TextView
+        android:id="@+id/fragment_register_term_of_use"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="By Register you agree with our Term of Use" />
+</LinearLayout>
