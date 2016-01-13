@@ -4,6 +4,7 @@
     android:layout_height="wrap_content"
     android:background="@color/color_dark_blue"
     android:fitsSystemWindows="true"
+    android:minHeight="?attr/actionBarSize"
     android:orientation="vertical">
 
     <ImageView

@@ -34,4 +34,5 @@ dependencies {
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.squareup.okhttp:okhttp:2.7.0'
     compile 'com.squareup.okhttp:okhttp-urlconnection:2.7.0'
+    compile 'com.android.support:design:23.1.1'
 }

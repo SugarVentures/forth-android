@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">ForthTV</string>
+
+    <string-array name="array_slide_menu">
+        <item>Streaming video live</item>
+        <item>Privacy</item>
+        <item>Term and Condition</item>
+    </string-array>
 </resources>
