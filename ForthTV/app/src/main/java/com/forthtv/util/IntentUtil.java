@@ -15,7 +15,8 @@ public class IntentUtil {
         OPEN_SIGNIN(3, "Open Sign in Screen"),
         OPEN_REGISTER(4, "Open Register Screen"),
         OPEN_RECORD(5, "Open Record Screen"),
-        OPEN_WATCH_VIDEO(5, "Open Watch Video Screen");
+        OPEN_WATCH_VIDEO(6, "Open Watch Video Screen"),
+        OPEN_SEARCH(7,"Open Search Screen");
 
         private int id;
         private String action;

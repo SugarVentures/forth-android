@@ -29,9 +29,11 @@ public class LoginFragment extends BaseFragment {
 
         mTextFieldWithMessageEmail = (TextFieldWithMessage)view.findViewById(R.id.fragment_login_email);
         mTextFieldWithMessageEmail.setTextFieldHint("EMAIL");
+        mTextFieldWithMessageEmail.setTextfieldIcon(R.drawable.icon_email);
 
         mTextFieldWithMessagePassword = (TextFieldWithMessage)view.findViewById(R.id.fragment_login_password);
         mTextFieldWithMessagePassword.setTextFieldHint("PASSWORD");
+        mTextFieldWithMessagePassword.setTextfieldIcon(R.drawable.icon_password);
         mTextFieldWithMessagePassword.setTextFieldType(true);
 
         return view;

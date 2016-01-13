@@ -2,6 +2,7 @@ package com.forthtv.util.view;
 
 import android.annotation.TargetApi;
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.text.InputType;
 import android.util.AttributeSet;
@@ -17,6 +18,7 @@ import com.forthtv.R;
  * Created by cuongvo on 1/12/16.
  */
 public class TextFieldWithMessage extends LinearLayout {
+    private Context mContext;
     private EditText mEditTextContent;
     private TextView mTextViewMessage;
 
@@ -42,6 +44,7 @@ public class TextFieldWithMessage extends LinearLayout {
     }
 
     private void initialize(Context context) {
+        this.mContext = context;
         LayoutInflater layoutInflater = LayoutInflater.from(context);
         View view = layoutInflater.inflate(R.layout.view_textfield_with_message, this);
         mEditTextContent = (EditText) view.findViewById(R.id.view_textfield);
@@ -56,12 +59,17 @@ public class TextFieldWithMessage extends LinearLayout {
         mTextViewMessage.setText(message);
     }
 
-    public void setTextFieldType(boolean password){
-        if(password){
+    public void setTextFieldType(boolean password) {
+        if (password) {
             mEditTextContent.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD);
-        }else{
+        } else {
             mEditTextContent.setInputType(InputType.TYPE_CLASS_TEXT);
         }
 
+    }
+
+    public void setTextfieldIcon(int imageResource) {
+//        Drawable drawable = mContext.getResources().getDrawable(imageResource);
+        mEditTextContent.setCompoundDrawablesWithIntrinsicBounds(imageResource, 0, 0, 0);
     }
 }

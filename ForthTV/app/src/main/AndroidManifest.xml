@@ -33,6 +33,9 @@
         <activity android:name=".controller.LandingActivity">
 
         </activity>
+        <activity
+            android:name=".controller.SearchActivity"
+            android:windowSoftInputMode="adjustPan" />
     </application>
 
 </manifest>

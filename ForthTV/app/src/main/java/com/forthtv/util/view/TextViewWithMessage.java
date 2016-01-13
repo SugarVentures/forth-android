@@ -58,4 +58,8 @@ public class TextViewWithMessage extends LinearLayout {
     public void setMessage(String message){
         mTextViewMessage.setText(message);
     }
+
+    public void setTextViewContentIcon(int imageResource){
+        mTextViewContent.setCompoundDrawablesWithIntrinsicBounds(imageResource,0,0,0);
+    }
 }

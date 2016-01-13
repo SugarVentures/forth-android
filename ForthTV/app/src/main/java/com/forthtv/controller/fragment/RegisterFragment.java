@@ -31,16 +31,20 @@ public class RegisterFragment extends BaseFragment {
 
         mTextFieldWithMessageUserName = (TextFieldWithMessage)view.findViewById(R.id.fragment_register_username);
         mTextFieldWithMessageUserName.setTextFieldHint("USER NAME");
+        mTextFieldWithMessageUserName.setTextfieldIcon(R.drawable.icon_username);
         mTextFieldWithMessageUserName.setTextMessage("User name is incorrect!");
 
         mTextFieldWithMessageEmail =(TextFieldWithMessage)view.findViewById(R.id.fragment_register_email);
+        mTextFieldWithMessageEmail.setTextfieldIcon(R.drawable.icon_email);
         mTextFieldWithMessageEmail.setTextFieldHint("EMAIL");
 
         mTextFieldWithMessagePassword = (TextFieldWithMessage)view.findViewById(R.id.fragment_register_password);
         mTextFieldWithMessagePassword.setTextFieldHint("PASSWORD");
+        mTextFieldWithMessagePassword.setTextfieldIcon(R.drawable.icon_password);
         mTextFieldWithMessagePassword.setTextFieldType(true);
 
         mTextViewWithMessageDateOfBirth = (TextViewWithMessage)view.findViewById(R.id.fragment_register_date_of_birth);
+        mTextViewWithMessageDateOfBirth.setTextViewContentIcon(R.drawable.icon_birthday);
         mTextViewWithMessageDateOfBirth.setTextHint("DATE OF BIRTH");
 
         return view;

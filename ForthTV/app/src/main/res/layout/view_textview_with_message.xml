@@ -9,6 +9,9 @@
         style="@style/StyleTextBlack14SP"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:singleLine="true"
+        android:maxLines="1"
         android:background="@drawable/shape_app_textfield"
         android:hint="hint" />
 

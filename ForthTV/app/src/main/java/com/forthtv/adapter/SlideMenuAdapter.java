@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.forthtv.R;
 import com.forthtv.controller.AuthenticationActivity;
+import com.forthtv.controller.SearchActivity;
 import com.forthtv.util.IntentUtil;
 
 /**
@@ -69,6 +70,7 @@ public class SlideMenuAdapter extends RecyclerView.Adapter<SlideMenuAdapter.Slid
 
         TextView mTextViewSignIn;
         TextView mTextViewRegister;
+        TextView mTextViewSearch;
 
         public SlideMenuViewHolder(Context context, View drawerItem, int itemType){
             super(drawerItem);
@@ -78,6 +80,15 @@ public class SlideMenuAdapter extends RecyclerView.Adapter<SlideMenuAdapter.Slid
             if (itemType == 1) {
                 mTextViewMenuOption = (TextView) drawerItem.findViewById(R.id.view_slide_menu_item_option);
             } else if (itemType == 0) {
+                mTextViewSearch = (TextView)drawerItem.findViewById(R.id.view_slide_menu_search);
+                mTextViewSearch.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        mContext.startActivity(IntentUtil.createIntent((Activity) mContext
+                                , SearchActivity.class
+                                , IntentUtil.NavigationUtil.OPEN_SEARCH.getAction()));
+                    }
+                });
                 mTextViewSignIn = (TextView)drawerItem.findViewById(R.id.view_slide_menu_signin);
                 mTextViewSignIn.setOnClickListener(new View.OnClickListener() {
                     @Override

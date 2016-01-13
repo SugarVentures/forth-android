@@ -19,7 +19,8 @@ public class BaseActivity extends AppCompatActivity {
         ACTIVITY_MAIN(1, R.layout.activity_main, "MAIN_ACTIVITY"),
         ACTIVITY_AUTHENTICATION(2, R.layout.activity_auth, "ACTIVITY_AUTHENTICATION"),
         ACTIVITY_LANDING(3, R.layout.activity_landing, "ACTIVITY_LANDING"),
-        ACTIVITY_RECORD(4, R.layout.actvity_record, "ACTIVITY_RECORD");
+        ACTIVITY_RECORD(4, R.layout.actvity_record, "ACTIVITY_RECORD"),
+        ACTIVITY_SEARCH(5, R.layout.activity_search, "ACTIVITY_SEARCH");
 
         private int id;
         private int layoutId;

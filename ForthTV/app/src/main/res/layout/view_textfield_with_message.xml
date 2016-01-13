@@ -10,7 +10,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/shape_app_textfield"
-        android:hint="hint" />
+        android:gravity="center_vertical"
+        android:hint="hint"
+        android:maxLines="1"
+        android:singleLine="true" />
 
     <TextView
         android:id="@+id/view_message"
