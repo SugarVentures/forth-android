@@ -15,18 +15,19 @@ import android.widget.Toast;
  * Created by cuongvo on 12/30/15.
  */
 public class BaseActivity extends AppCompatActivity {
-    public enum ActivityType{
+    public enum ActivityType {
         ACTIVITY_MAIN(1, R.layout.activity_main, "MAIN_ACTIVITY"),
         ACTIVITY_AUTHENTICATION(2, R.layout.activity_auth, "ACTIVITY_AUTHENTICATION"),
         ACTIVITY_LANDING(3, R.layout.activity_landing, "ACTIVITY_LANDING"),
         ACTIVITY_RECORD(4, R.layout.actvity_record, "ACTIVITY_RECORD"),
-        ACTIVITY_SEARCH(5, R.layout.activity_search, "ACTIVITY_SEARCH");
+        ACTIVITY_SEARCH(5, R.layout.activity_search, "ACTIVITY_SEARCH"),
+        ACTIVITY_WATCH(6, R.layout.activity_watch, "ACTIVITY_WATCH");
 
         private int id;
         private int layoutId;
         private String name;
 
-        ActivityType(int id, int layoutId, String name){
+        ActivityType(int id, int layoutId, String name) {
             this.id = id;
             this.layoutId = layoutId;
             this.name = name;
@@ -67,23 +68,23 @@ public class BaseActivity extends AppCompatActivity {
         updateStatusBarView();
     }
 
-    public void openFragment(BaseFragment baseFragment, int contentLayoutId, BaseFragment.FragmentType fragmentType){
+    public void openFragment(BaseFragment baseFragment, int contentLayoutId, BaseFragment.FragmentType fragmentType) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         android.support.v4.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction().replace(contentLayoutId, baseFragment, fragmentType.getName());
         fragmentTransaction.commit();
     }
 
-    public void updateStatusBarView(){
+    public void updateStatusBarView() {
         Window window = getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
     }
 
-    public void displayProgress(){
+    public void displayProgress() {
 
     }
 
-    public void displayToast(Activity activity, String message){
+    public void displayToast(Activity activity, String message) {
         Toast.makeText(activity, message, Toast.LENGTH_LONG).show();
     }
 

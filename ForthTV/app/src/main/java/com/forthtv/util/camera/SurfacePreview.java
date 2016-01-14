@@ -15,11 +15,11 @@ import java.util.List;
 public class SurfacePreview extends ViewGroup implements SurfaceHolder.Callback {
     private final String TAG = "Preview";
 
-    SurfaceView mSurfaceView;
-    SurfaceHolder mHolder;
-    Size mPreviewSize;
-    List<Size> mSupportedPreviewSizes;
-    Camera mCamera;
+    private SurfaceView mSurfaceView;
+    private SurfaceHolder mHolder;
+    private Size mPreviewSize;
+    private List<Size> mSupportedPreviewSizes;
+    private Camera mCamera;
 
 
     public SurfacePreview(Context context, SurfaceView sv) {

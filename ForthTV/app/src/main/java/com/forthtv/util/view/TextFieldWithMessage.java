@@ -69,7 +69,6 @@ public class TextFieldWithMessage extends LinearLayout {
     }
 
     public void setTextfieldIcon(int imageResource) {
-//        Drawable drawable = mContext.getResources().getDrawable(imageResource);
         mEditTextContent.setCompoundDrawablesWithIntrinsicBounds(imageResource, 0, 0, 0);
     }
 }

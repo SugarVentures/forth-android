@@ -16,11 +16,11 @@ import com.forthtv.util.IntentUtil;
 /**
  * Created by cuongvo on 1/13/16.
  */
-public class SlideMenuAdapter extends RecyclerView.Adapter<SlideMenuAdapter.SlideMenuViewHolder>{
+public class AdapterSlideMenu extends RecyclerView.Adapter<AdapterSlideMenu.SlideMenuViewHolder>{
     private Context mContext;
     private String[] mMenuItems;
 
-    public SlideMenuAdapter(Context context, String[] menuItems){
+    public AdapterSlideMenu(Context context, String[] menuItems){
         this.mContext = context;
         this.mMenuItems = menuItems;
 

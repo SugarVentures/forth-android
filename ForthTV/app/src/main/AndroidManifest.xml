@@ -36,6 +36,7 @@
         <activity
             android:name=".controller.SearchActivity"
             android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".controller.RecordActivity" />
     </application>
 
 </manifest>
