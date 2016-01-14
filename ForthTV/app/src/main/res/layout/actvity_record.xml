@@ -7,8 +7,7 @@
     <SurfaceView
         android:id="@+id/activity_record_surface"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/color_black" />
+        android:layout_height="match_parent" />
 
     <TextView
         android:id="@+id/activity_record_time"
@@ -29,6 +28,7 @@
         android:text="LIVE NOW" />
 
     <include
+        android:id="@+id/activity_record_media_options"
         layout="@layout/view_record_options"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
