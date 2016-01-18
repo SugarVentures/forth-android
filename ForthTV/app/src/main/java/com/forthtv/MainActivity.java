@@ -1,5 +1,6 @@
 package com.forthtv;
 
+import android.content.Intent;
 import android.support.v4.widget.DrawerLayout;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -7,19 +8,22 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
 import android.view.View;
 
-import com.forthtv.adapter.AdapterSlideMenu;
+import com.forthtv.adapter.SlideMenuAdapter;
 import com.forthtv.controller.RecordActivity;
+import com.forthtv.controller.fragment.VideoLiveFragment;
 import com.forthtv.util.IntentUtil;
 import com.forthtv.util.view.AppToolbar;
 
 public class MainActivity extends BaseActivity {
+    private static final int CONTAINER_LAYOUT = R.id.activity_main_content;
 
     private String[] mStringsMenuItems;
     private DrawerLayout mDrawerLayout;
     private RecyclerView mRecyclerViewSlideMenu;
-    private AdapterSlideMenu mSlideMenuAdapter;
+    private SlideMenuAdapter mSlideMenuAdapter;
 
     private AppToolbar mAppToolbar;
+    private VideoLiveFragment videoLiveFragment;
 
     public MainActivity() {
         mActivityType = ActivityType.ACTIVITY_MAIN;
@@ -37,7 +41,7 @@ public class MainActivity extends BaseActivity {
         mRecyclerViewSlideMenu.setLayoutManager(linearLayoutManager);
 
         mStringsMenuItems = getResources().getStringArray(R.array.array_slide_menu);
-        mSlideMenuAdapter = new AdapterSlideMenu(this, mStringsMenuItems);
+        mSlideMenuAdapter = new SlideMenuAdapter(this, mStringsMenuItems);
         mRecyclerViewSlideMenu.setAdapter(mSlideMenuAdapter);
 
         mAppToolbar = (com.forthtv.util.view.AppToolbar) findViewById(R.id.activity_main_toolbar);
@@ -51,14 +55,32 @@ public class MainActivity extends BaseActivity {
                 mDrawerLayout.openDrawer(Gravity.LEFT);
             }
         });
+
         mAppToolbar.getImageViewActionRight().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(IntentUtil.createIntent(MainActivity.this
+                startActivityForResult(IntentUtil.createIntent(MainActivity.this
                         , RecordActivity.class
-                        , IntentUtil.NavigationUtil.OPEN_RECORD.getAction()));
+                        , IntentUtil.NavigationUtil.OPEN_RECORD.getAction()), IntentUtil.NavigationUtil.OPEN_RECORD.getId());
             }
         });
         mAppToolbar.setTitle("STREAMING VIDEO LIVE", true);
+
+        openVideoLive();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == IntentUtil.NavigationUtil.OPEN_RECORD.getId()){
+
+        }
+        
+    }
+
+    public void openVideoLive() {
+        videoLiveFragment = new VideoLiveFragment();
+        openFragment(videoLiveFragment, CONTAINER_LAYOUT, BaseFragment.FragmentType.FRAGMENT_VIDEO_LIVE);
     }
 }

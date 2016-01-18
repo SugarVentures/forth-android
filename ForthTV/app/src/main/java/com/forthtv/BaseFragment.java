@@ -17,7 +17,8 @@ public class BaseFragment extends Fragment {
 
     public enum FragmentType {
         FRAGMENT_LOGIN(1, R.layout.fragment_login, "FRAGMENT_LOGIN"),
-        FRAGMENT_REGISTER(1, R.layout.fragment_register, "FRAGMENT_REGISTER");
+        FRAGMENT_REGISTER(2, R.layout.fragment_register, "FRAGMENT_REGISTER"),
+        FRAGMENT_VIDEO_LIVE(3, R.layout.fragment_video_live, "FRAGMENT_VIDEO_LIVE");
 
         private int id;
         private int layoutId;

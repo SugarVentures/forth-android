@@ -10,13 +10,13 @@ import android.util.Log;
  */
 public class IntentUtil {
     public enum NavigationUtil {
-        OPEN_LANDING(1, "Open Landing Screen"),
-        OPEN_MAIN(2, "Open Main Screen"),
-        OPEN_SIGNIN(3, "Open Sign in Screen"),
-        OPEN_REGISTER(4, "Open Register Screen"),
-        OPEN_RECORD(5, "Open Record Screen"),
-        OPEN_WATCH_VIDEO(6, "Open Watch Video Screen"),
-        OPEN_SEARCH(7,"Open Search Screen");
+        OPEN_LANDING(001, "Open Landing Screen"),
+        OPEN_MAIN(002, "Open Main Screen"),
+        OPEN_SIGNIN(003, "Open Sign in Screen"),
+        OPEN_REGISTER(004, "Open Register Screen"),
+        OPEN_RECORD(005, "Open Record Screen"),
+        OPEN_WATCH_VIDEO(006, "Open Watch Video Screen"),
+        OPEN_SEARCH(007,"Open Search Screen");
 
         private int id;
         private String action;
@@ -28,6 +28,10 @@ public class IntentUtil {
 
         public String getAction() {
             return this.action;
+        }
+
+        public int getId(){
+            return this.id;
         }
     }
 
