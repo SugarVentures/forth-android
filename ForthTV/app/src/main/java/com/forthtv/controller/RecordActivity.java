@@ -34,6 +34,7 @@ public class RecordActivity extends BaseActivity implements Camera.PreviewCallba
     private SurfaceView mSurface;
     private SurfacePreview mSurfacePreview;
     private RelativeLayout mRelativeLayoutMediaOptions;
+    private int cameraId;
 
     public RecordActivity(){
         mActivityType = ActivityType.ACTIVITY_RECORD;
@@ -117,7 +118,7 @@ public class RecordActivity extends BaseActivity implements Camera.PreviewCallba
     public void chooseCamera() {
         // if the camera preview is the front
         if (isCameraFront) {
-            int cameraId = CameraUtil.findCameraId();
+            cameraId = CameraUtil.findCameraId();
             if (cameraId >= 0) {
                 // open the backFacingCamera
                 // set a picture callback
@@ -147,6 +148,7 @@ public class RecordActivity extends BaseActivity implements Camera.PreviewCallba
         mMediaRecorder.setCamera(mCamera);
         mMediaRecorder.setAudioSource(MediaRecorder.AudioSource.CAMCORDER);
         mMediaRecorder.setVideoSource(MediaRecorder.VideoSource.CAMERA);
+        mMediaRecorder.setOrientationHint(CameraUtil.getRecordOrientation(this, cameraId, mCamera));
 
         if (CamcorderProfile.hasProfile(CameraUtil.findCameraId(), CamcorderProfile.QUALITY_720P)) {
             mMediaRecorder.setProfile(CamcorderProfile.get(CamcorderProfile.QUALITY_720P));

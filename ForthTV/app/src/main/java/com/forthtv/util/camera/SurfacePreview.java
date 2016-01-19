@@ -39,10 +39,8 @@ public class SurfacePreview extends ViewGroup implements SurfaceHolder.Callback 
             mSupportedPreviewSizes = mCamera.getParameters().getSupportedPreviewSizes();
             requestLayout();
 
-
             // get Camera parameters
             Camera.Parameters params = mCamera.getParameters();
-
 
             List<String> focusModes = params.getSupportedFocusModes();
             if (focusModes.contains(Camera.Parameters.FOCUS_MODE_AUTO)) {
@@ -76,10 +74,8 @@ public class SurfacePreview extends ViewGroup implements SurfaceHolder.Callback 
         if (changed && getChildCount() > 0) {
             final View child = getChildAt(0);
 
-
             final int width = r - l;
             final int height = b - t;
-
 
             int previewWidth = width;
             int previewHeight = height;

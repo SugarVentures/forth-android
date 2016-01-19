@@ -37,7 +37,9 @@
             android:name=".controller.SearchActivity"
             android:windowSoftInputMode="adjustPan" />
         <activity android:name=".controller.RecordActivity" />
-        <activity android:name=".controller.WatchVideoActivity" />
+        <activity
+            android:name=".controller.WatchVideoActivity"
+            android:windowSoftInputMode="adjustPan" />
     </application>
 
 </manifest>

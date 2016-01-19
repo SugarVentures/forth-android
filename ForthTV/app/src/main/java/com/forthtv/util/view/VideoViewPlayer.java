@@ -72,6 +72,8 @@ public class VideoViewPlayer extends LinearLayout implements SurfaceHolder.Callb
     public void setupSurfaceView(){
         mMediaPlayer = new MediaPlayer();
         mMediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+        mMediaPlayer.setScreenOnWhilePlaying(true);
+
 
         // Testing purpose only
         Uri uri = Uri.parse(mVideoData.getVideoPath());
@@ -127,6 +129,7 @@ public class VideoViewPlayer extends LinearLayout implements SurfaceHolder.Callb
     public void surfaceCreated(SurfaceHolder holder) {
         if(mMediaPlayer != null) {
             mMediaPlayer.setDisplay(mSurfaceHolder);
+            setSurfaceSize();
         }
     }
 
@@ -144,15 +147,11 @@ public class VideoViewPlayer extends LinearLayout implements SurfaceHolder.Callb
 
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
-        super.onLayout(changed, l, t, r, b);
-
         if (changed && getChildCount() > 0) {
             final View child = getChildAt(0);
 
-
             final int width = r - l;
             final int height = b - t;
-
 
             int previewWidth = width;
             int previewHeight = height;
@@ -160,7 +159,6 @@ public class VideoViewPlayer extends LinearLayout implements SurfaceHolder.Callb
                 previewWidth = mVideoSize.width;
                 previewHeight = mVideoSize.height;
             }
-
 
             // Center the child SurfaceView within the parent.
             if (width * previewHeight > height * previewWidth) {
@@ -178,5 +176,26 @@ public class VideoViewPlayer extends LinearLayout implements SurfaceHolder.Callb
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+    }
+
+    private void setSurfaceSize() {
+        // get the dimensions of the video (only valid when surfaceView is set)
+        float videoWidth = mMediaPlayer.getVideoWidth();
+        float videoHeight = mMediaPlayer.getVideoHeight();
+
+        // get the dimensions of the container (the surfaceView's parent in this case)
+        View container = (View) mSurfaceView.getParent();
+        float containerWidth = container.getWidth();
+        float containerHeight = container.getHeight();
+
+        // set dimensions to surfaceView's layout params (maintaining aspect ratio)
+        android.view.ViewGroup.LayoutParams lp = mSurfaceView.getLayoutParams();
+        lp.width = (int) containerWidth;
+        lp.height = (int) ((videoHeight / videoWidth) * containerWidth);
+        if(lp.height > containerHeight) {
+            lp.width = (int) ((videoWidth / videoHeight) * containerHeight);
+            lp.height = (int) containerHeight;
+        }
+        mSurfaceView.setLayoutParams(lp);
     }
 }
