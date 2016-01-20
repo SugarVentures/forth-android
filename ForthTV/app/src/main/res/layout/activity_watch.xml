@@ -5,10 +5,28 @@
     android:background="@color/color_white"
     android:orientation="vertical">
 
-    <com.forthtv.util.view.VideoViewPlayer
-        android:id="@+id/activity_watch_player"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="250dp" />
+        android:layout_height="wrap_content">
+
+        <com.forthtv.util.view.VideoViewPlayer
+            android:id="@+id/activity_watch_player"
+            android:layout_width="match_parent"
+            android:layout_height="250dp" />
+
+        <com.forthtv.util.view.VideoFooter
+            android:id="@+id/activity_watch_video_footer"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_gravity="bottom" />
+
+        <com.forthtv.util.view.VideoHeader
+            android:id="@+id/activity_watch_video_header"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_gravity="top" />
+
+    </FrameLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
