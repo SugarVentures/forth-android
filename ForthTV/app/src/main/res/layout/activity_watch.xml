@@ -33,12 +33,12 @@
         android:layout_height="70dp">
 
         <ImageView
+            android:id="@+id/activity_watch_channel_avatar"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="16dp"
-            android:background="@color/color_black" />
+            android:layout_marginLeft="16dp" />
     </RelativeLayout>
 
     <LinearLayout
