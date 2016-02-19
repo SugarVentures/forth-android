@@ -20,7 +20,10 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,16 +32,31 @@
         </activity>
         <activity
             android:name=".controller.AuthenticationActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" />
-        <activity android:name=".controller.LandingActivity">
+
+        <activity
+            android:name=".controller.LandingActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
 
         </activity>
         <activity
             android:name=".controller.SearchActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" />
-        <activity android:name=".controller.RecordActivity" />
+
+        <activity
+            android:name=".controller.RecordActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".controller.WatchVideoActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" />
     </application>
 

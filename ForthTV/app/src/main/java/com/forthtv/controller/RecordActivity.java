@@ -176,7 +176,6 @@ public class RecordActivity extends BaseActivity implements Camera.PreviewCallba
     private void releaseCamera() {
         if (mCamera != null) {
             mCamera.release();
-            mCamera = null;
         }
     }
 

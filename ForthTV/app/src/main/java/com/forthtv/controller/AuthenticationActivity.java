@@ -50,10 +50,10 @@ public class AuthenticationActivity extends BaseActivity {
         mFrameLayoutAuthCotent = (FrameLayout) findViewById(R.id.fragment_auth_main_content);
 
         Intent intent = getIntent();
-        if(!TextUtils.isEmpty(intent.getAction())){
+        if (!TextUtils.isEmpty(intent.getAction())) {
             String screen = intent.getAction();
             navigating(screen);
-        }else {
+        } else {
             // Display login fragment as default
             openLoginFragment();
         }
